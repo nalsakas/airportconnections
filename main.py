@@ -96,12 +96,10 @@ def findroutes(airports, routes, start):
 
         # add missing connections from other airports until all airports are added
         sum = sum.union(routes_sets[i])
-        if sum == airports_set:
-            res += 1
-            break
-        
         i += 1
         res += 1
+        if sum == airports_set:
+            break
     
     # Result is sum of grand airport + number of added airports to the sum
     return res
